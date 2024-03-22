@@ -18,7 +18,6 @@ function App() {
   return (
     <div className='App-Dark'>
       <Navbar/>
-      Hello from App
 
     </div>
   )

@@ -1,16 +1,19 @@
 // IMPORTS //
 // RRD
 // React
+import { useState, useEffect } from 'react';
 // Styles
 import './Navbar.css'
 
+// Components 
 
 // COMPONENT //
 export const Navbar = () => {
     // STATES
+    const [isMobile, setIsmobile] = useState(true);
     // FUNCTIONS //
     // Toggle selected button
-    const toggleSelectedBTN = (e) => { 
+    const toggleSelectedBTN = (e) => {
         const buttons = document.querySelectorAll('.Navbar-BTNs button');
         buttons.forEach(button => {
             if (button === e.target) {
@@ -22,20 +25,38 @@ export const Navbar = () => {
             }
         });
     }
+    // Hnalde show nav menu 
+    const showNavMenu = () => { 
+        console.log("showing nav menu")
+    }
 
 
-    return (
-        <div className='Navbar-Dark'>
-            <div className='Navbar-Title'>
-                Alexander Micklewright
+    return (<>
+        {!isMobile ?
+            <div className='Navbar-Dark'>
+                <div className='Navbar-Title'>
+                    Alexander Micklewright
+                </div>
+                <div className='Navbar-BTNs'>
+                    <button className='Navbar-BTN-Selected' onClick={toggleSelectedBTN}>Home</button>
+                    <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>CV</button>
+                    <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Projects</button>
+                    <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Contact</button>
+                    <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Extra</button>
+                </div>
             </div>
-            <div className='Navbar-BTNs'>
-                <button className='Navbar-BTN-Selected' onClick={toggleSelectedBTN}>Home</button>
-                <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>CV</button>
-                <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Projects</button>
-                <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Contact</button>
-                <button className='Navbar-BTN-Deselected' onClick={toggleSelectedBTN}>Extra</button>
+            :
+            <div className='Mobile-Navbar-Dark'>
+                <div className='Mobile-Navbar-Title'>
+                    Alexander Micklewright
+                </div>
+                <div className='Mobile-Navbar-BTNs'>
+                    <button className='Mobile-Navbar-BTN'>Home</button>
+                </div>
             </div>
-        </div>
+        }
+
+
+    </>
     );
 }
