@@ -7,10 +7,11 @@
   /* Dimentions */
   width: calc(100vw - 20px);
   max-width: 1500px;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 110px);
   padding: 10px;
   /* Colors */
   background-color: #262626;
   color: white;
   font-family: sans-serif;
+  padding-top: 100px;
 }
