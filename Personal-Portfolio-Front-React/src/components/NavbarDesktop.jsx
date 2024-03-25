@@ -5,20 +5,58 @@ import { useState, useEffect } from 'react';
 import './NavbarDesktop.css'
 
 // COMPONENT 
-
 export const NavbarDesktop = () => {
+    // State to track active button
+    const [activeButton, setActiveButton] = useState('homeBTN');
+
+    // button Handlers
+    const handleButtonClick = (buttonId) => {
+        setActiveButton(buttonId);
+        console.log("directing to " + buttonId);
+    };
+
     return (
         <div className="NavbarDesktop">
             <div className='Navnbar-Desktop-Header'>
                 Alexander Micklewright
             </div>
             <div className='Navbar-Desktop-BTNs'>
-                <button className='Navbar-Desktop-BTN-Selected'>Home</button>
-                <button className='Navbar-Desktop-BTN'>CV</button>
-                <button className='Navbar-Desktop-BTN'>Projects</button>
-                <button className='Navbar-Desktop-BTN'>Contact</button>
-                <button className='Navbar-Desktop-BTN'>XXXX</button>
+                <button
+                    id='homeBTN'
+                    className={activeButton === 'homeBTN' ? 'Navbar-Desktop-BTN-Selected' : 'Navbar-Desktop-BTN'}
+                    onClick={() => handleButtonClick('homeBTN')}
+                >
+                    Home
+                </button>
+                <button
+                    id='cvBTN'
+                    className={activeButton === 'cvBTN' ? 'Navbar-Desktop-BTN-Selected' : 'Navbar-Desktop-BTN'}
+                    onClick={() => handleButtonClick('cvBTN')}
+                >
+                    CV
+                </button>
+                <button
+                    id='projectsBTN'
+                    className={activeButton === 'projectsBTN' ? 'Navbar-Desktop-BTN-Selected' : 'Navbar-Desktop-BTN'}
+                    onClick={() => handleButtonClick('projectsBTN')}
+                >
+                    Projects
+                </button>
+                <button
+                    id='contactBTN'
+                    className={activeButton === 'contactBTN' ? 'Navbar-Desktop-BTN-Selected' : 'Navbar-Desktop-BTN'}
+                    onClick={() => handleButtonClick('contactBTN')}
+                >
+                    Contact
+                </button>
+                <button
+                    id='xxxxBTN'
+                    className={activeButton === 'xxxxBTN' ? 'Navbar-Desktop-BTN-Selected' : 'Navbar-Desktop-BTN'}
+                    onClick={() => handleButtonClick('xxxxBTN')}
+                >
+                    XXXX
+                </button>
             </div>
         </div>
-    )
-}
+    );
+};

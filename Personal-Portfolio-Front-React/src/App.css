@@ -1,12 +1,11 @@
 .App-Dark {
-  outline: 3px dashed pink;
   /* display */
   display: flex;
   flex-direction: column;
   align-items: center;
   /* Dimentions */
   width: calc(100vw - 20px);
-  max-width: 1500px;
+  max-width: 2500px;
   height: calc(100vh - 110px);
   padding: 10px;
   /* Colors */
