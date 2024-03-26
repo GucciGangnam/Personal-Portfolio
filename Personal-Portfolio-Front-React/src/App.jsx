@@ -1,7 +1,7 @@
 
 // IMPORTS //
 //RRD
-
+import { Route, Routes } from 'react-router-dom'
 // React 
 import { useState, useEffect } from 'react'
 // Styles
@@ -14,6 +14,9 @@ import { NavbarDesktop } from './components/NavbarDesktop'
 
 // Pages 
 import { Homepage } from './pages/Homepage'
+import { CVpage } from './pages/CVpage'
+import { Projectpage } from './pages/Projectspage'
+import { Contactpage } from './pages/Contactpage'
 
 // COMPONENT //
 function App() {
@@ -45,7 +48,13 @@ function App() {
       {ismobile ? <NavbarMobile/> : <NavbarDesktop/>}
        {/* Absolute positioning */}
 
-      <Homepage/>
+      <Routes>
+        <Route path="/home" element={<Homepage />} />
+        <Route path="/cv" element={<CVpage />} />
+        <Route path="/projects" element={<Projectpage />} />
+        <Route path="/contact" element={<Contactpage />} />
+      </Routes>
+
     </div>
   )
 }
