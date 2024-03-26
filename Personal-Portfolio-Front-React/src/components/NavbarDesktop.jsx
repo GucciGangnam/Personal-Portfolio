@@ -8,7 +8,6 @@ import './NavbarDesktop.css'
 
 // COMPONENT 
 export const NavbarDesktop = () => {
-    console.log("Navbar Desktop Rendered")
     // Initiate useNavigate
     const navigate = useNavigate();
     // State to track active button

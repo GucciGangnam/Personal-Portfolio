@@ -1,0 +1,93 @@
+.Homepage {
+    outline: 3px dashed white;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+}
+
+.Homepage-Left {
+    position: relative;
+    outline: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.Homepage-Stack-1, .Homepage-Stack-2, .Homepage-Stack-3 {
+    opacity: 0;
+    transform: translateY(-20px); /* Initial position slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.Homepage-Stack-1 {
+    position: absolute;
+    margin-bottom: 100px;
+    max-width: 90%;
+}
+
+.Homepage-Stack-2 {
+    position: absolute;
+    max-width: 90%;
+}
+
+.Homepage-Stack-3 {
+    position: absolute;
+    margin-top: 100px;
+    max-width: 90%;
+}
+
+.Homepage-Right {
+    outline: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.Homepage-Avatar {
+    width: 500px;
+    max-width: 90%;
+}
+
+/* Media Query for Portrait Mode */
+@media (orientation: portrait) {
+    .Homepage {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Animation for Stack elements */
+@keyframes fadeAndMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to Stack elements */
+.Homepage-Stack-1, .Homepage-Stack-2, .Homepage-Stack-3 {
+    animation: fadeAndMove 0.5s ease forwards;
+}
+
+/* Delay for individual Stack elements */
+.Homepage-Stack-2 {
+    animation-delay: 0.2s; /* Delay 0.2s */
+}
+
+.Homepage-Stack-3 {
+    animation-delay: 0.4s; /* Delay 0.4s */
+}

@@ -16,6 +16,7 @@
     grid-template-rows: 65px auto;
     gap: 10px;
     overflow: hidden;
+    z-index: 4;
 }
 
 .Mobile-Navbar-Closed {
@@ -36,6 +37,7 @@
     grid-template-rows: 65px auto;
     gap: 10px;
     overflow: hidden;
+    z-index: 4;
 }
 /* TOP SENCTION */
 .Mobile-Navbar-top{ 

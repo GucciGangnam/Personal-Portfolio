@@ -47,14 +47,12 @@ function App() {
     <div className='App-Dark'>
       {ismobile ? <NavbarMobile/> : <NavbarDesktop/>}
        {/* Absolute positioning */}
-
       <Routes>
         <Route path="/home" element={<Homepage />} />
         <Route path="/cv" element={<CVpage />} />
         <Route path="/projects" element={<Projectpage />} />
         <Route path="/contact" element={<Contactpage />} />
       </Routes>
-
     </div>
   )
 }
