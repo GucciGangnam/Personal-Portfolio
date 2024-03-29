@@ -1,76 +1,60 @@
 .Homepage {
-    outline: 3px dashed white;
-    width: 100vw;
+    min-height: 300px;
+    width: 100%;
     height: 100%;
+    max-width: 2000px;
+    /* display */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    max-width: 100%;
 }
 
-.Homepage-Left {
+/* LEFT  */
+.HP-Left-Container {
+    /* outline: 1px dashed red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
     position: relative;
-    outline: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    aspect-ratio: 1/1;
-    overflow: hidden;
+}
+.HP-Left-Container:hover .Stack-Img1 {
+    margin-bottom: 200px; /* Adjust the margin value as per your requirement */
+}
+.HP-Left-Container:hover .Stack-Img2 {
+    margin-bottom: 100px; /* Adjust the margin value as per your requirement */
 }
 
-.Homepage-Stack-1, .Homepage-Stack-2, .Homepage-Stack-3 {
+.Stack-Img1,
+.Stack-Img2,
+.Stack-Img3 {
+    max-width: 500px;
+    max-height: 100%;
+    position: absolute;
     opacity: 0;
-    transform: translateY(-20px); /* Initial position slightly above */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: appearAndMoveDown 1s ease forwards;
+    transition: margin 0.5s ease; /* Added transition for margin */
 }
 
-.Homepage-Stack-1 {
-    position: absolute;
-    margin-bottom: 100px;
-    max-width: 90%;
+.Stack-Img1 {
+    margin-bottom: 150px;
+    animation-delay: 1s;
 }
 
-.Homepage-Stack-2 {
-    position: absolute;
-    max-width: 90%;
+.Stack-Img2 {
+    margin-bottom: 75px;
+    animation-delay: 0.5s;
 }
 
-.Homepage-Stack-3 {
-    position: absolute;
-    margin-top: 100px;
-    max-width: 90%;
-}
 
-.Homepage-Right {
-    outline: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-}
 
-.Homepage-Avatar {
-    width: 500px;
-    max-width: 90%;
-}
-
-/* Media Query for Portrait Mode */
-@media (orientation: portrait) {
-    .Homepage {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-/* Animation for Stack elements */
-@keyframes fadeAndMove {
+@keyframes appearAndMoveDown {
     0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-50px);
     }
     100% {
         opacity: 1;
@@ -78,16 +62,75 @@
     }
 }
 
-/* Apply animation to Stack elements */
-.Homepage-Stack-1, .Homepage-Stack-2, .Homepage-Stack-3 {
-    animation: fadeAndMove 0.5s ease forwards;
+.Slogan-Text {
+    /* outline: 1px dashed pink; */
+    color: #4f4f4f;
+    font-size: 2rem;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    opacity: 0;
+    animation: appear 1s ease forwards;
+    animation-delay: 1s;
 }
 
-/* Delay for individual Stack elements */
-.Homepage-Stack-2 {
-    animation-delay: 0.2s; /* Delay 0.2s */
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.Homepage-Stack-3 {
-    animation-delay: 0.4s; /* Delay 0.4s */
+
+
+
+/* RIGHT */
+
+.HP-Right-Container {
+
+    /* outline: 1px dashed red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.HP-Img {
+    /* outline: 1px dashed pink; */
+    max-width: 500px;
+    max-height: 100%;
+}
+
+
+/* AMINATIONS */
+
+/* Media Query for Portrait Mode */
+@media (orientation: portrait) {
+    .Homepage {
+        flex-direction: column-reverse;
+    }
+
+    .HP-Left-Container {
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 50%;
+        max-width: 100%;
+        max-height: 50%;
+        overflow: hidden;
+    }
+
+    .HP-Right-Container {
+        width: 100%;
+        height: 50%;
+        max-width: 100%;
+        max-height: 50%;
+        overflow: hidden;
+    }
 }

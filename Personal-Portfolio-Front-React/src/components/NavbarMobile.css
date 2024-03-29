@@ -24,7 +24,7 @@
     color: white;
     border-radius: 25px;
 
-    position: absolute;
+    position: fixed;
     top: 20px;
     width: calc(100vw - 40px);
     max-width: 2000px;

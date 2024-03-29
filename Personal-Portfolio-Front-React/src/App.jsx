@@ -11,10 +11,11 @@ import './App.css'
 // Components 
 import { NavbarMobile } from './components/NavbarMobile'
 import { NavbarDesktop } from './components/NavbarDesktop'
+import { CVnavMobile } from './components/CVnavMobile'
 
 // Pages 
 import { Homepage } from './pages/Homepage'
-import { CVpage } from './pages/CVpage'
+import { CVpageMobile } from './pages/CVpageMobile'
 import { Projectpage } from './pages/Projectspage'
 import { Contactpage } from './pages/Contactpage'
 
@@ -22,6 +23,13 @@ import { Contactpage } from './pages/Contactpage'
 function App() {
   // STATES 
   const [ismobile, setIsMobile] = useState(true)
+  const [isCVnavShowing, setIsCVnavShowing] = useState(false)
+  const [currentCVPage, setCurrentCVPage] = useState(1);
+
+  // Use effect to see surrent page number 
+  useEffect(() => { 
+    console.log(currentCVPage)
+  }, [currentCVPage])
 
   // Function to handle window resize
   const handleResize = () => {
@@ -41,15 +49,16 @@ function App() {
     };
   }, []);
 
-  
+
 
   return (
     <div className='App-Dark'>
-      {ismobile ? <NavbarMobile/> : <NavbarDesktop/>}
-       {/* Absolute positioning */}
+      {ismobile ? <NavbarMobile /> : <NavbarDesktop />}
+      {/* Absolute positioning */}
+      {isCVnavShowing && <CVnavMobile  currentCVPage={currentCVPage}/>}
       <Routes>
         <Route path="/home" element={<Homepage />} />
-        <Route path="/cv" element={<CVpage />} />
+        <Route path="/cv" element={<CVpageMobile setIsCVnavShowing={setIsCVnavShowing} currentCVPage={currentCVPage} setCurrentCVPage={setCurrentCVPage}/>} />
         <Route path="/projects" element={<Projectpage />} />
         <Route path="/contact" element={<Contactpage />} />
       </Routes>
