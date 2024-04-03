@@ -2,12 +2,12 @@
     background-color: #262626;
     color: white;
     border-radius: 25px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     width: calc(100vw - 40px);
     max-width: 2000px;
     height: calc(100vh - 40px);
-
+    /* padding: 20px; */
     transition: 300ms;
 
     /* display */
@@ -24,7 +24,7 @@
     color: white;
     border-radius: 25px;
 
-    position: fixed;
+    position: absolute;
     top: 20px;
     width: calc(100vw - 40px);
     max-width: 2000px;
@@ -39,48 +39,53 @@
     overflow: hidden;
     z-index: 4;
 }
-/* TOP SENCTION */
-.Mobile-Navbar-top{ 
-        grid-column: 1 / -1;
-        height: 65px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
-}
-.Mobile-Navbar-Header{ 
 
+/* TOP SENCTION */
+.Mobile-Navbar-top {
+    grid-column: 1 / -1;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.Mobile-Navbar-Menu-BTN-Open{ 
+
+.Mobile-Navbar-Header {}
+
+.Mobile-Navbar-Menu-BTN-Open {
     background-color: #404040;
     border: 1px solid #FF8535;
     border-radius: 25px;
     padding: 5px;
     padding-left: 10px;
-    padding-right: 10px;;
+    padding-right: 10px;
+    ;
     color: white;
     font-size: 1rem;
     box-shadow: 0 0 20px rgba(255, 133, 53, 0.5);
 }
-.Mobile-Navbar-Menu-BTN-Closed{ 
+
+.Mobile-Navbar-Menu-BTN-Closed {
     background-color: #FF8535;
     border: none;
     border-radius: 25px;
     padding: 5px;
     padding-left: 10px;
-    padding-right: 10px;;
+    padding-right: 10px;
+    ;
     color: white;
     font-size: 1rem;
 }
 
 /* BUTTON SECTION  */
-.Mobile-Navbar-BTN-grid{ 
+.Mobile-Navbar-BTN-grid {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Mobile-Navbar-BTN{ 
+
+.Mobile-Navbar-BTN {
     border: 1px solid #FF8535;
     border-radius: 50%;
     width: 150px;

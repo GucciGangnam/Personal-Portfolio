@@ -1,108 +1,100 @@
 .Projectpage {
+
+    /* outline: 1px dashed white; */
     width: 100%;
-    max-width: 1500px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Three equal columns */
-    gap: 10px;
-    /* Adjust the gap between grid items as needed */
-    padding-top: 20px;
-    row-gap: 50px; 
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-.Flex-Grid-L {
-    transition: 500ms;
-    transform: translateX(-100px);
-    opacity: 0;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.Flex-Grid-L-Show {
-    transition: 500ms;
-    transform: translateX(0px);
-    opacity: 1;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Flex-Grid-R {
-    transition: 500ms;
-    transform: translateX(100px);
-    opacity: 0;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.Flex-Grid-R-Show {
-    transition: 500ms;
-    transform: translateX(0px);
-    opacity: 1;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Flex-Grid-Text {
-    transition: 1500ms;
-    opacity: 0;
-    min-width: fit-content;
-    min-height: fit-content;
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-.Flex-Grid-Text-Show {
-    transition: 1500ms;
-    opacity: 1;
-    min-width: fit-content;
-    min-height: fit-content;
-    max-height: fit-content;
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
-
-
-.Flex-Grid-Text-Box {
-    color: #808080;
-    max-width: 500px;
-    
-}
-
-.Project-Card {
-    padding: 10px;
-    width: 200px;
-    height: 200px;
-    outline: 1px solid #FF8535;
-    border-radius: 8px;
+    max-width: 1250px;
+    height: calc(100vh - 150px);
+    color: rgb(168, 168, 168);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    /* position: absolute; */
+    gap: 50px;
+    overflow-x: scroll;
 }
 
- /* BUTTONS */
-.Project-Card-BTN-Div {
+.Project-Container-Odd {
+    /* outline: 1px dashed blue; */
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    gap: 10px;
+    transform: translate(90%);
+    transition: 600ms;
+}
+
+.Project-Container-Odd-Showing {
+    /* outline: 1px dashed blue; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    gap: 10px;
+    transform: translate(0%);
+    transition: 600ms;
+}
+
+.Project-Container-Even {
+    /* outline: 1px dashed blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    gap: 10px;
+    transform: translate(-90%);
+    transition: 600ms;
+}
+
+.Project-Container-Even-Showing {
+    /* outline: 1px dashed blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    gap: 10px;
+    transform: translate(0%);
+    transition: 600ms;
+}
+
+
+
+.Project-Card {
+    /* outline: 1px dashed pink; */
+    /* border: 1px solid #FF8535; */
+    background-color: #ff863520;
+    border-radius: 10px;
+    ;
+    min-width: 200px;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.Project-Card-Title {}
+
+.Project-Card-Icon {}
+
+.Project-Card-BTN-Div {
+    display: flex;
+    width: 100%;
     justify-content: space-evenly;
 }
+
 .Project-Card-Code-BTN {
     background-color: inherit;
     border: 1px solid #FF8535;
@@ -110,24 +102,49 @@
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    ;
     color: white;
     font-size: 1rem;
 }
+
 .Project-Card-Code-BTN:hover {
-    color: #FF8535;
     cursor: pointer;
 }
+
 .Project-Card-Preview-BTN {
     background-color: #FF8535;
-    border: 1px solid #404040;
+    border: none;
     border-radius: 25px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    ;
     color: white;
     font-size: 1rem;
 }
+
 .Project-Card-Preview-BTN:hover {
-    color: black;
     cursor: pointer;
+}
+
+.Project-Text {
+    /* outline: 1px solid green; */
+    padding: 10px;
+    max-width: 500px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Framework-Icons-Container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+}
+
+.Framework-Icon {
+    max-width: 30px;
+    filter: grayscale(100%);
 }
