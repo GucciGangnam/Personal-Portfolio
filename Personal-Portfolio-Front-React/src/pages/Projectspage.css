@@ -1,0 +1,133 @@
+.Projectpage {
+    width: 100%;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal columns */
+    gap: 10px;
+    /* Adjust the gap between grid items as needed */
+    padding-top: 20px;
+    row-gap: 50px; 
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.Flex-Grid-L {
+    transition: 500ms;
+    transform: translateX(-100px);
+    opacity: 0;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Flex-Grid-L-Show {
+    transition: 500ms;
+    transform: translateX(0px);
+    opacity: 1;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Flex-Grid-R {
+    transition: 500ms;
+    transform: translateX(100px);
+    opacity: 0;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Flex-Grid-R-Show {
+    transition: 500ms;
+    transform: translateX(0px);
+    opacity: 1;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Flex-Grid-Text {
+    transition: 1500ms;
+    opacity: 0;
+    min-width: fit-content;
+    min-height: fit-content;
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.Flex-Grid-Text-Show {
+    transition: 1500ms;
+    opacity: 1;
+    min-width: fit-content;
+    min-height: fit-content;
+    max-height: fit-content;
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+
+
+.Flex-Grid-Text-Box {
+    color: #808080;
+    max-width: 500px;
+    
+}
+
+.Project-Card {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    outline: 1px solid #FF8535;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ /* BUTTONS */
+.Project-Card-BTN-Div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Project-Card-Code-BTN {
+    background-color: inherit;
+    border: 1px solid #FF8535;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 1rem;
+}
+.Project-Card-Code-BTN:hover {
+    color: #FF8535;
+    cursor: pointer;
+}
+.Project-Card-Preview-BTN {
+    background-color: #FF8535;
+    border: 1px solid #404040;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 1rem;
+}
+.Project-Card-Preview-BTN:hover {
+    color: black;
+    cursor: pointer;
+}

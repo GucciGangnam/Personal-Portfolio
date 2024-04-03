@@ -9,6 +9,9 @@ import { useState, useEffect, useRef } from 'react';
 // COMPONENT//
 export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPage }) => {
 
+    useEffect(() => { 
+        setCurrentCVPage(1)
+    }, [])
     useEffect(() => {
         let lastScrollTop = 0;
         const cvPageMobile = document.querySelector('.CVpageMobile');
@@ -34,6 +37,15 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
         };
     }, [setIsCVnavShowing]);
 
+    useEffect(() => { 
+                    // TEST 
+            if (currentCVPage == 5) { 
+                setTimeout(()=> { 
+                    setIsCVnavShowing(false);
+                }, 2000)
+            }
+    }, [currentCVPage])
+
     const scrollRef = useRef(null);
 
     useEffect(() => {
@@ -45,7 +57,7 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
             // console.log(scrollFraction)
 
 
-            if (scrollFraction <= 0.001) {
+            if (scrollFraction < 0.001) {
                 setCurrentCVPage(1);
             } else if (scrollFraction <= 0.2501) {
                 setCurrentCVPage(2);
@@ -75,12 +87,9 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
         <div className="CVpageMobile" ref={scrollRef}>
 
             <div className='scrollpage'>
+            <div className='TEST'>1995</div>
                 <div className='Mobile-Scrollpage-Date'>
-                    {currentCVPage === 1 ? <div className='Mobile-Date'>1995</div> : null}
-                    {currentCVPage === 2 ? <div className='Mobile-Date'>2014</div> : null}
-                    {currentCVPage === 3 ? <div className='Mobile-Date'>2017</div> : null}
-                    {currentCVPage === 4 ? <div className='Mobile-Date'>2020</div> : null}
-                    {currentCVPage === 5 ? <div className='Mobile-Date'>2021</div> : null}
+
                 </div>
                 {currentCVPage === 1 ? <div className='Mobile-Scrollpage-Content'>
                     <div className='MSC-Title'>
@@ -136,22 +145,30 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
                         <br />
                         <br />
                         In 2023 I moved to Ho Chi Minh City and started working part time so I could focus on writing more code.
+                        <br />
+                        <br />
+                        <button>Download CV</button>
                     </div></div> : null}
             </div>
 
             <div className='scrollpage'>
+                <div className='TEST'>2014</div>
 
             </div>
 
             <div className='scrollpage'>
+            <div className='TEST'>2017</div>
 
             </div>
 
             <div className='scrollpage'>
+            <div className='TEST'>2020</div>
 
             </div>
 
             <div className='scrollpage'>
+            <div className='TEST'>2021</div>
+
             </div>
 
         </div>

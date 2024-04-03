@@ -25,6 +25,12 @@
     color: #404040;
     font-size: 7rem;
 }
+.TEST{ 
+    position: absolute;
+    top: 0px;
+    color: #404040;
+    font-size: 7rem;
+}
 
 .Mobile-Scrollpage-Content {
     border-radius: 10px;
@@ -35,7 +41,7 @@
     margin-top: 100px;
     background-color: #40404084;
     opacity: 0;
-    animation: scaleAnimation 500ms ease-in forwards;
+    animation: scaleAnimation 1000ms ease-in forwards;
     z-index: 0;
     pointer-events: none;
     display: flex;
@@ -68,8 +74,6 @@
 }
 .MSC-LI{ 
     padding-top: 5px;
-
-
 }
 
 @keyframes bounceRotate {
@@ -86,14 +90,14 @@
 
 @keyframes scaleAnimation {
     0% {
-        margin-top: 500px;
+
         /* start scaled up */
-        opacity: 0.1;
+        opacity: 0;
         /* low opacity */
     }
 
     100% {
-        margin-top: 0px;
+
         /* end normal size */
         opacity: 1;
         /* full opacity */
