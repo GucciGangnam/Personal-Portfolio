@@ -33,13 +33,14 @@
 }
 
 .Mobile-Scrollpage-Content {
+    font-size: 1rem;
     border-radius: 10px;
     position: fixed;
     width: 80%;
     height: fit-content;
     padding: 20px;
     margin-top: 100px;
-    background-color: #40404084;
+    background-color: none;
     opacity: 0;
     animation: scaleAnimation 1000ms ease-in forwards;
     z-index: 0;
@@ -50,17 +51,34 @@
 
 }
 
+.Download-CV-BTN{ 
+    background-color: #FF8535;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;;
+    color: black;
+    font-size: 0.8rem;
+    margin-top: 60vh;
+}
+.Download-CV-BTN:hover{ 
+    color: white;
+
+
+}
+
+
 .MSC-Title {
     padding: 10px;
     padding-bottom: 20px;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 24px;
 }
 
 .MSC-Body {
     padding: 10px;
-
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .MSC-Scroll-Indicator {

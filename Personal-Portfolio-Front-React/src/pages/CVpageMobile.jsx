@@ -147,7 +147,6 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
                         In 2023 I moved to Ho Chi Minh City and started working part time so I could focus on writing more code.
                         <br />
                         <br />
-                        <button>Download CV</button>
                     </div></div> : null}
             </div>
 
@@ -168,8 +167,9 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
 
             <div className='scrollpage'>
             <div className='TEST'>2021</div>
-
+            <button className='Download-CV-BTN'>Download CV</button>
             </div>
+            
 
         </div>
     );

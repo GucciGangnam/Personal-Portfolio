@@ -1,16 +1,17 @@
 .Projectpage {
-
-    /* outline: 1px dashed white; */
+    padding-top: 50px;;
     width: 100%;
     max-width: 1250px;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 200px);
     color: rgb(168, 168, 168);
     display: flex;
     flex-direction: column;
     align-items: center;
     /* position: absolute; */
     gap: 50px;
-    overflow-x: scroll;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .Project-Container-Odd {
