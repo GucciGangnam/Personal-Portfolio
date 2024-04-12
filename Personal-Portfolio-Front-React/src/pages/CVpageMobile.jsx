@@ -3,13 +3,17 @@
 import './CVpageMobile.css'
 // React 
 import { useState, useEffect, useRef } from 'react';
+// Components 
+import { DownloadCV } from '../components/DownloadCV';
 
 
 
 // COMPONENT//
 export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPage }) => {
 
-    useEffect(() => { 
+    // STATES 
+    const [isCVProtectorShowing, setIsCVProtectorShowing] = useState(false)
+    useEffect(() => {
         setCurrentCVPage(1)
     }, [])
     useEffect(() => {
@@ -37,13 +41,13 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
         };
     }, [setIsCVnavShowing]);
 
-    useEffect(() => { 
-                    // TEST 
-            if (currentCVPage == 5) { 
-                setTimeout(()=> { 
-                    setIsCVnavShowing(false);
-                }, 2000)
-            }
+    useEffect(() => {
+        // TEST 
+        if (currentCVPage == 5) {
+            setTimeout(() => {
+                setIsCVnavShowing(false);
+            }, 2000)
+        }
     }, [currentCVPage])
 
     const scrollRef = useRef(null);
@@ -83,11 +87,20 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
         };
     }, [currentCVPage]);
 
+    // Function to open and close CV Downloaded
+    const toggleCVProtector = () => {
+        if (isCVProtectorShowing) {
+            setIsCVProtectorShowing(false)
+        } else {
+            setIsCVProtectorShowing(true)
+        }
+    }
+
     return (
         <div className="CVpageMobile" ref={scrollRef}>
-
+            {isCVProtectorShowing && <DownloadCV isCVProtectorShowing={isCVProtectorShowing} setIsCVProtectorShowing={setIsCVProtectorShowing} />}
             <div className='scrollpage'>
-            <div className='TEST'>1995</div>
+                <div className='TEST'>1995</div>
                 <div className='Mobile-Scrollpage-Date'>
 
                 </div>
@@ -156,20 +169,20 @@ export const CVpageMobile = ({ setIsCVnavShowing, currentCVPage, setCurrentCVPag
             </div>
 
             <div className='scrollpage'>
-            <div className='TEST'>2017</div>
+                <div className='TEST'>2017</div>
 
             </div>
 
             <div className='scrollpage'>
-            <div className='TEST'>2020</div>
+                <div className='TEST'>2020</div>
 
             </div>
 
             <div className='scrollpage'>
-            <div className='TEST'>2021</div>
-            <button className='Download-CV-BTN'>Download CV</button>
+                <div className='TEST'>2021</div>
+                <button onClick={toggleCVProtector} className='Download-CV-BTN'>Download CV</button>
             </div>
-            
+
 
         </div>
     );

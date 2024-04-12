@@ -86,7 +86,7 @@
 }
 
 .Mobile-Navbar-BTN {
-    border: 1px solid #FF8535;
+    border: none;
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -99,4 +99,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.Mobile-Navbar-BTN:hover {
+    cursor: pointer;
 }

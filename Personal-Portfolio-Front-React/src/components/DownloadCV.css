@@ -1,0 +1,55 @@
+.DownloadCV {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.DownloadCV input {
+    background-color: #404040;
+    border: none;;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+.DownloadCV input:focus {
+    outline: 2px solid #FF8535;
+}
+
+.DownloadCV button {
+    background-color: #FF8535;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.DownloadCV button:hover {
+    background-color: #FF8535;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    ;
+    color: black;
+    font-size: 0.8rem;
+}
+/* 
+
