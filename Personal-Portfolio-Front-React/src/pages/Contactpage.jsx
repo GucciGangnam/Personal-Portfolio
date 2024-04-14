@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Contactpage.css';
 
 export const Contactpage = () => {
+    const navigate = useNavigate();
     const [formStep, setFormStep] = useState(1);
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("")
@@ -27,7 +29,7 @@ export const Contactpage = () => {
             if (response.ok) {
                 console.log('Request succeeded!');
                 localStorage.setItem('messageSent', 'true');
-                window.location.reload();
+                navigate('/contact')
             } else {
                 console.error('Request failed with status:', response.status);
                 // Handle other status codes if needed
