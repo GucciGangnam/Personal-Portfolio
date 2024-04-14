@@ -9,7 +9,7 @@ export const Contactpage = () => {
 
     // Fetch function 
     const postData = async () => {
-        const url = 'http://localhost:3000/contact';
+        const url = 'https://personal-portfolio.adaptable.app/contact';
         const data = {
             email: email,
             message: message
