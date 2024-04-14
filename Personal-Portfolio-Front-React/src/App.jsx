@@ -1,7 +1,7 @@
 
 // IMPORTS //
 //RRD
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 // React 
 import { useState, useEffect } from 'react'
 // Styles
@@ -57,6 +57,7 @@ function App() {
       {/* Absolute positioning */}
       {isCVnavShowing && <CVnavMobile  currentCVPage={currentCVPage}/>}
       <Routes>
+      <Route path="/" element={<Homepage />} />
         <Route path="/home" element={<Homepage />} />
         <Route path="/cv" element={<CVpageMobile setIsCVnavShowing={setIsCVnavShowing} currentCVPage={currentCVPage} setCurrentCVPage={setCurrentCVPage}/>} />
         <Route path="/projects" element={<Projectpage />} />
