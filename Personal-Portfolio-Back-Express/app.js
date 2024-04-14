@@ -7,6 +7,7 @@ const cors = require('cors');
 
 
 var contactRouter = require('./routes/contact');
+var indexRouter = require('./routes/index');
 
 var app = express();
 
@@ -25,7 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', indexRouter);
 app.use('/contact', contactRouter);
+
 
 
 // catch 404 and forward to error handler
