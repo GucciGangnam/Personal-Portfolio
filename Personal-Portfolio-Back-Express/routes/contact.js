@@ -23,6 +23,8 @@ router.post('/', function (req, res, next) {
   const clientEmail = req.body.email;
   const clientMessage = req.body.message;
 
+  console.log(clientEmail, clientMessage)
+
   // Handle the email sending
   const mailOptions1 = {
     from: process.env.MY_EMAIL,

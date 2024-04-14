@@ -5,6 +5,40 @@ export const Contactpage = () => {
     const [formStep, setFormStep] = useState(1);
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("")
+    const [sending, setSending] = useState(false)
+
+    // Fetch function 
+    const postData = async () => {
+        const url = 'http://localhost:3000/contact';
+        const data = {
+            email: email,
+            message: message
+        };
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                console.log('Request succeeded!');
+                localStorage.setItem('messageSent', 'true');
+                window.location.reload();
+            } else {
+                console.error('Request failed with status:', response.status);
+                // Handle other status codes if needed
+            }
+
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+            // Handle error appropriately
+        }
+    };
+
 
     const handleMesageChange = (e) => {
         setMessage(e.target.value)
@@ -30,9 +64,10 @@ export const Contactpage = () => {
         e.preventDefault();
         console.log(message + "," + email)
         // POST REQUEST TO API TO SEND EMAIL 
-        // Set local storage item 'message sent" and set it to 'true'
-        localStorage.setItem('messageSent', 'true');
-        window.location.reload();
+        postData();
+        setSending(true)
+
+
     }
 
     return (
@@ -75,9 +110,17 @@ export const Contactpage = () => {
                             </button>
                         )}
                         {formStep === 2 && (
-                            <button type='submit'>
-                                Send
-                            </button>
+                            <>
+                            {sending ? (
+                                <button type='button' disabled>
+                                    Sending...
+                                </button>
+                            ) : (
+                                <button type='submit'>
+                                    Send
+                                </button>
+                            )}
+                        </>
                         )}
                     </div>
                 </form>

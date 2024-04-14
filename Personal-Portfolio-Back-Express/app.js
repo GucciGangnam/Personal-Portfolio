@@ -3,11 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 
 
 var contactRouter = require('./routes/contact');
 
 var app = express();
+
+// Use the CORS middleware with '*' to allow from anywhere
+app.use(cors({
+  origin: '*'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
